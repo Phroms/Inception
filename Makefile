@@ -3,16 +3,16 @@ NAME = Inception
 all: build up #Al ejecutar 'make'(sin argumentos), se ejecutan los objetivos 'build' y 'up' "es igual = make build y make up"
 
 build:  # Construye los contenedore definidos en 'docker-compose.yml'
-	@docker-compose -f src/docker-compose.yml build
+	@docker compose -f src/docker-compose.yml build
 	# Lee los Dockerfiles y crea las imagenes
 
 up:	# Levanta los contenedores en modo "detached" (-d), es decir, en segundo plano
-	@docker-compose -f src/docker-compose.yml up -d
+	@docker compose -f src/docker-compose.yml up -d
 	# Inicia los servicios sin bloquear la terminal.
 	# Si no existian contenedores antes, tambien los construye automaticamente
 
 down:	# Detiene y elimina los contenedores definidos en 'docker-compose.yml'
-	@docker-compose -f src/docker-compose.yml down
+	@docker compose -f src/docker-compose.yml down
 	# No borra las imagenes ni los volumenes
 
 clean: down
