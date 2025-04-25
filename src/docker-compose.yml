@@ -13,11 +13,10 @@ services:
       container_name: wordpress
       build: ./requirements/wordpress
       restart: always
+      depends_on:
+        - mariadb
       environment:
-        WORDPRESS_DB_HOST: mariadb:3306
-        WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
-        WORDPRESS_DB_USER: ${MYSQL_USER}
-        WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+        - .env
       volumes:
         - wordpress_data:/var/www/html
       networks:
@@ -31,6 +30,8 @@ services:
         - "443:443"
       volumes:
         - wordpress_data:/var/www/html
+      depends_on:
+        - wordpress
       networks:
         - inception
 
