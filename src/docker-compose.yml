@@ -12,11 +12,10 @@ services:
     wordpress:
       container_name: wordpress
       build: ./requirements/wordpress
+      env_file: .env
       restart: always
       depends_on:
         - mariadb
-      environment:
-        - .env
       volumes:
         - wordpress_data:/var/www/html
       networks:

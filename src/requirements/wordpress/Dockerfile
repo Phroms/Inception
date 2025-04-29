@@ -5,7 +5,7 @@ RUN apt-get update && apt-get upgrade -y && \
 	apt-get install -y vim curl wget php7.4 php7.4-fpm php7.4-mysql mariadb-client
 
 # Download WP-CLI
-RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -O /usr/local/bin/wp \
 && chmod +x /usr/local/bin/wp
 
 # Configure PHP-FPM
