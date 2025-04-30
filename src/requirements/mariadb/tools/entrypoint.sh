@@ -24,12 +24,11 @@ else
     mysql -e "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';"
     
     # Set root password and secure the installation
-   # mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';"
+    mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';"
     mysql -e "FLUSH PRIVILEGES;"
     
     # Stop the service so we can start it properly
-    service mariadb stop
-    
+    #service mariadb stop
     echo "MariaDB initialized successfully!"
 fi
 
