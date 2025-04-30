@@ -27,6 +27,7 @@ start:
 clean: down
 	@docker system prune -af
 	@docker volume rm $(shell docker volume ls -q)
+	@docker network rm $$(docker network ls -q) 2>/dev/null || true
 	# Primero ejecuta 'make down' (detiene los contenedores)
 	# Luego ejecuta: 'docker system prune -af'
 	# Borra imagenes, conteneores y redes no utilizadas.
