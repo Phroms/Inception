@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:11
 
 # Install al thing necesary from mariadb works
 RUN apt-get update && apt-get upgrade -y && \

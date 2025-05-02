@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:11
 
 # Instalar NGINX, OpenSSL y envsubst (parte de gettext)
 RUN apt-get update && apt-get upgrade -y && \
